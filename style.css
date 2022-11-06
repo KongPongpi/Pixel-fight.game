@@ -1,0 +1,8 @@
+body {
+    background: linear-gradient(to right bottom, #ea2c62, #120078);
+    font-family: Arial, sans-serif;
+  
+
+    justify-content: center;
+    align-items: center;
+}
