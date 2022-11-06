@@ -1,0 +1,275 @@
+<head>
+  <div style="margin-left: 315px;">
+    <h2>Pixel Fight Game</h2></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" 
+    rel="stylesheet">
+      <style>
+       * {
+        box-sizing: border-box;
+        font-family: 'Press Start 2P', cursive;
+       }
+       
+      </style>
+  </head>
+
+  <body>
+    <!-- red container div -->
+    <div style="position: relative; display: inline-block;">
+      <!-- smaller red container div -->
+      <div style="
+      position: absolute; 
+      display: flex; 
+      width: 100%; 
+      align-items: center;
+      padding: 20px;
+      "
+     > 
+        <!-- player health -->
+        <div style="
+        position: relative;  
+        width: 100%; 
+        display: flex; 
+        justify-content: flex-end;
+        border-top: 4px solid white;
+        border-left: 4px solid white;
+        border-bottom: 4px solid white;
+      
+        "
+      > 
+          <div style="background-color: red; height: 30px; width: 100%;" ></div>
+          <div 
+           id="PlayerHealth"
+           style="position: absolute; 
+           background: #9ca6ff; 
+           top: 0; 
+           right: 0; 
+           bottom: 0;
+           width: 100%;
+           "
+          ></div>
+        </div>
+        <!-- timer -->
+        <div 
+        id="timer"
+        style="
+        background-color: black ; 
+        width: 100px; 
+        height: 50px; 
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: 4px solid white;
+        "
+        >
+        
+      </div>
+        <!-- enemy health -->
+        <div style="
+        position: relative; 
+        width: 100%;
+        border-top: 4px solid white;
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+        "
+      > 
+          <div style="background-color: red; height: 30px;" ></div>
+          <div 
+           id="EnemyHealth"
+           style="position: absolute; 
+           background: #9ca6ff; 
+           top: 0; 
+           right: 0; 
+           left: 0; 
+           bottom: 0;
+           "
+          ></div>
+        </div>
+        <div></div>
+      </div>
+     <div
+        id="displayText" 
+        style="
+          position: absolute; 
+          color:white; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: none;
+        "
+      >  
+        Draw
+      </div> 
+     <canvas></canvas>
+    </div>
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" 
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
+    <script src="JS/utils.js"></script>
+    <script src="JS/classes.js"></script>
+    <script src="index.js"></script>
+
+        <!-- Player 1 -->
+    <div style="position: absolute;
+    width: 160px;
+    height: 43px;
+    left: 1090px;
+    top: 40px;" >
+    <p> [Player 1] </p> <br>
+     </div>    
+
+      <!-- Jump 1 -->
+    <div style="position: absolute;
+    width: 53px;
+    height: 24px;
+    left: 1170px;
+    top: 150px;" >
+    <p> Jump </p> <br>
+     </div>
+
+      <!-- Move 1 -->
+    <div style="position: absolute;
+    width: 52px;
+    height: 24px;
+    left: 1170px;
+    top: 100px;" >
+    <p> Move </p> <br>
+     </div>
+
+      <!-- Attack 1 -->
+    <div style="position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 1170px;
+    top: 200px;" >
+    <p> Attack </p> <br>
+     </div>
+
+
+     <!-- Player 2 -->
+    <div style="position: absolute;
+    position: absolute;
+    width: 260px;
+    height: 43px;
+    left: 1090px;
+      top: 300px;">
+    <p> [Player 2] </p> <br>
+     </div>
+
+      <!-- Jump 2 -->
+    <div style="position: absolute;
+    width: 53px;
+    height: 24px;
+    left: 1170px;
+    top: 425px;" >
+    <p> Jump </p> <br>
+     </div>
+
+      <!-- Move 2  -->
+    <div style="position: absolute;
+    width: 52px;
+    height: 24px;
+    left: 1170px;
+    top: 370px;" >
+    <p> Move </p> <br>
+     </div>
+
+      <!-- Attack 2 -->
+    <div style="position: absolute;
+    width: 61px;
+    height: 24px;
+    left: 1170px;
+    top: 495px;" >
+    <p> Attack </p> <br>
+     </div>
+
+      <!-- A -->     
+    <div style="position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1040px;
+    top: 100px;">
+    <img src="img/A.png" alt="A" width="42" height="40">
+
+    </div>
+
+     <!-- D -->     
+     <div style="position: absolute;
+     width: 100px;
+     height: 100px;
+     left: 1088px;
+     top: 100px;">
+     <img src="img/D.png" alt="D" width="43" height="43">
+ 
+     </div>
+
+      <!-- W -->     
+    <div style="position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1062px;
+    top: 150px;">
+    <img src="img/W.png" alt="W" width="46" height="40">
+
+    </div>
+
+     <!-- S -->     
+     <div style="position: absolute;
+     width: 100px;
+     height: 100px;
+     left: 1065px;
+     top: 200px;">
+     <img src="img/S.png" alt="S" width="40" height="38">
+ 
+     </div>
+
+      <!-- Left -->     
+    <div style="position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1040px;
+    top: 360px;">
+    <img src="img/Left.png" alt="Left" width="50" height="54">
+
+    </div>
+
+     <!-- Right -->     
+     <div style="position: absolute;
+     width: 100px;
+     height: 100px;
+     left: 1088px;
+     top: 360px;">
+     <img src="img/Right.png" alt="Right" width="50" height="50">
+ 
+     </div>
+
+      <!-- Up -->     
+    <div style="position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1062px;
+    top: 425px;">
+    <img src="img/UP.png" alt="Up" width="50" height="50">
+
+    </div>
+
+     <!-- Down -->
+     <div style="position: absolute;
+     width: 100px;
+     height: 100px;
+     left: 1062px;
+     top: 490px;">
+     <img src="img/Down.png" alt="Down" width="50" height="50">
+ 
+     </div>
+  </body>
+  
