@@ -1,2 +1,2 @@
 # Pixel-fight.game
-Game link : kongpongpiphatpixelgame.netlify.app
+Game link : https://kongpongpiphatpixelgame.netlify.app
